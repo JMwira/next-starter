@@ -7,21 +7,18 @@ import ShapeRight from 'assets/shape-right.png';
 
 export default function Banner() {
   return (
-    <section sx={styles.banner} id="home">
-      <Container sx={styles.banner.container}>
+    <section id="home" sx={styles.banner} >
+      <Container sx={styles.banner.container} >
         <Box sx={styles.banner.contentBox}>
-          <Heading as="h1" variant="heroPrimary">
-            Top Quality Digital Products To Explore
+          <Heading as="h1" variant="heroPrimary" >
+            Top Quality digital Products to Explore
           </Heading>
-          <Text as="p" variant="heroSecondary">
-            Get your blood tests delivered at let home collect sample from the
-            victory of the managements that supplies best design system
-            guidelines ever.
+          <Text as="p" variant="heroSecondary" >
+            Checout our website to find great software products and deals! if you need a website or a web application, this is the place to go
           </Text>
-          <Button variant="primary">Explore</Button>
+          <Button variant="primary" >Explore</Button>
         </Box>
-
-        <Box sx={styles.banner.imageBox}>
+        <Box sx={styles.banner.imageBox} >
           <Image src={BannerImg} alt="banner" />
         </Box>
       </Container>
