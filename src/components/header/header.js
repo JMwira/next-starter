@@ -23,6 +23,7 @@ export default function Header({ className }) {
           }
         </Flex>
         <Button className='donate_btn'>Get started</Button>
+        <MobileDrawer/>
       </Container>
     </header>
   );
