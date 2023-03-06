@@ -58,7 +58,54 @@ const MobileDrawer = () => {
       closeButton={<IoMdClose size="24px" color="#000000" />}
       drawerStyle={styles.drawer}
       closeBtnStyle={styles.close}
-     ></Drawer>
+     >
+      <Scrollbars autoHide >
+        <Box
+          sx={styles.content}
+        >
+          <Box
+            sx={styles.menu}
+          >
+            {
+              menuItems.map((menu_item, i)=>{
+                return(
+                  <Link
+                    activeClass='active'
+                    to={menu_item.path}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    key={i}
+                  >
+                    {menu_item.label}
+                  </Link>
+                )
+              })
+            }
+          </Box>
+          <Box
+            sx={styles.menuFooter}
+          >
+            <Box sx={styles.social} >
+              {
+                social.map((social_item,i)=>(
+                  <Box
+                    as="span"
+                    key={i}
+                    sx={styles.social.icon}
+                  >
+                    <Link to={social_item.path} >
+                      {social_item.icon}
+                    </Link>
+                  </Box>
+                ))
+              }
+            </Box>
+          </Box>
+        </Box>
+      </Scrollbars>
+     </Drawer>
   );
 };
 
