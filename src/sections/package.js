@@ -290,38 +290,31 @@ export default function Package() {
       <Container>
         <SectionHeader
           slogan="Pricing Plan"
-          title="Choose your pricing policy"
+          title="Choose your pricing plan"
         />
         <Flex sx={styles.buttonGroup}>
           <Box sx={styles.buttonGroupInner}>
-            <button
-              className={state.active === 'monthly' ? 'active' : ''}
-              type="button"
-              aria-label="Monthly"
-              onClick={() => handlePricingPlan('monthly')}
-            >
+            <button className={state.active==="monthly"?'active':''} type="button" aria-label='Monthly' onClick={()=>handlePricingPlan("monthly")} >
               Monthly Plan
             </button>
-            <button
-              className={state.active === 'annual' ? 'active' : ''}
-              type="button"
-              aria-label="Annual"
-              onClick={() => handlePricingPlan('annual')}
-            >
+            <button className={state.active==="annual"?'active':''} type="button" aria-label='Annual' onClick={()=>handlePricingPlan("annual")} >
               Annual Plan
             </button>
           </Box>
         </Flex>
-        <Box sx={styles.pricingWrapper} className="pricing__wrapper">
-          <Carousel {...sliderParams}>
-            {state.pricingPlan.map((packageData) => (
-              <Box
-                sx={styles.pricingItem}
-                key={`${state.active}-card--key${packageData.id}`}
-              >
-                <PriceCard data={packageData} />
-              </Box>
-            ))}
+        <Box sx={styles.pricingWrapper} className="pricing__wrapper" >
+          <Carousel
+            {...sliderParams}
+          >
+            {
+              state.pricingPlan.map((packagedata)=>(
+                <Box sx={styles.pricingItem} key={packagedata.id}>
+                  <PriceCard
+                    data={packagedata}
+                  />
+                </Box>
+              ))
+            }
           </Carousel>
         </Box>
       </Container>
