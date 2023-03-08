@@ -31,8 +31,6 @@ export default function IndexPage() {
           <Package />
           <TeamSection />
           <TestimonialCard />
-          <BlogSection />
-          <Subscribe />
         </Layout>
       </StickyProvider>
     </ThemeProvider>
