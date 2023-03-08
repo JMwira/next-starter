@@ -78,19 +78,22 @@ const responsive = {
 
 export default function TestimonialCard() {
   return (
-    <section id="testimonial" sx={{ variant: 'section.testimonial' }}>
-      <Container css={{ textAlign: 'center' }}>
-        <SectionHeader slogan="Testimonial" title="Meet Client Satisfaction" />
+    <section id="testimonial" sx={{variant:"section.testimonial"}} >
+      <Container css={{textAlign:'centre'}} >
+        <SectionHeader
+          slogan="Testimonial"
+          title="Meet Client satisfaction"
+        ></SectionHeader>
       </Container>
-      <Box sx={styles.carouselWrapper}>
+      <Box sx={styles.carouselWrapper} >
         <Carousel
           additionalTransfrom={0}
           arrows={false}
           autoPlaySpeed={3000}
           centerMode={false}
           className=""
-          containerClass="carousel-container"
-          customButtonGroup={<ButtonGroup />}
+          containerClass='carousel-container'
+          customButtonGroup={<ButtonGroup/>}
           dotListClass=""
           draggable
           focusOnSelect={false}
@@ -105,14 +108,13 @@ export default function TestimonialCard() {
           sliderClass=""
           slidesToSlide={1}
         >
-          {data.map((item) => (
-            <Box sx={styles.reviewCard} key={`testimonial--key${item.id}`}>
-              <Rating rating={item.review} />
-              <Heading as="h3" sx={styles.title}>
-                {item.title}
-              </Heading>
-              <Text sx={styles.description}>{item.description}</Text>
-              <div className="card-footer">
+          {
+            data.map((item)=>(
+              <Box sx={styles.reviewCard} key={`testimonial--key${item.id}`}>
+                <Rating rating={item.review}/>
+                <Heading as="h3" sx={styles.title} >{item.title}</Heading>
+                <Text sx={styles.description}>{item.description}</Text>
+                <div className="card-footer">
                 <div className="image">
                   <Image src={item.avatar} alt="Client Image" />
                 </div>
@@ -123,8 +125,9 @@ export default function TestimonialCard() {
                   <Text sx={styles.designation}>{item.designation}</Text>
                 </div>
               </div>
-            </Box>
-          ))}
+              </Box>
+            ))
+          }
         </Carousel>
       </Box>
     </section>
