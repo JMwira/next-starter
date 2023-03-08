@@ -5,42 +5,24 @@ import data from './footer.data';
 import FooterLogo from 'assets/logo.svg';
 export default function Footer() {
   return (
-    <footer sx={styles.footer}>
+    <footer sx={styles.footer} >
       <Container>
-        <Grid sx={styles.widgets}>
-          {data.widgets.map((item) => (
-            <Box
-              key={`footer-widget--key${item.id}`}
-              sx={styles.widgets.widgetItem}
-            >
-              <Image src={item.iconSrc} alt={item.altText} />
-              <Box sx={styles.widgets.infoWrapper}>
-                <Heading as="h3">{item.title}</Heading>
-                <Text as="p">{item.description}</Text>
-              </Box>
-            </Box>
-          ))}
-        </Grid>
-        {/* End of footer widgets area */}
-        <Box sx={styles.footer.footerBottomArea}>
+        <Box sx={styles.footer.footerBottomArea} >
           <Link path="/">
-            <Image src={FooterLogo} alt="Logo" />
+            <Image src={FooterLogo}/>
           </Link>
-          <Box sx={styles.footer.menus}>
+          <Box sx={styles.footer.menus} >
             <nav>
-              {data.menuItem.map(({ path, label }, i) => (
-                <Link
-                  path={path}
-                  key={i}
-                  label={label}
-                  sx={styles.footer.link}
-                />
-              ))}
+              {
+                data.menuItem.map((item, i)=>(
+                  <Link path={item.path} key={i} label={item.label} sx={styles.footer.link} />
+                ))
+              }
             </nav>
+            <Text sx={styles.footer.copyright} >
+              copyright by {new Date().getFullYear()} jeyNetwork
+            </Text>
           </Box>
-          <Text sx={styles.footer.copyright}>
-            Copyright by {new Date().getFullYear()} RedQ, Inc
-          </Text>
         </Box>
       </Container>
     </footer>
